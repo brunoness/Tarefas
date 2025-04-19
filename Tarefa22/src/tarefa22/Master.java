@@ -9,9 +9,9 @@ public class Master {
 		List<Pessoa> lista = new Pessoa().grupoPessoas();
 		
 //           			TAREFA	
-		System.out.println("TAREFA: Pessoas do Sexo Masculino:");
+		System.out.println("TAREFA: Pessoas do Sexo Feminino:");
 		lista.stream()
-				.filter(pessoa -> pessoa.getSexo().equals("Masculino"))
+				.filter(pessoa -> pessoa.getSexo().equals("Feminino"))
 				.forEach(pessoa -> System.out.println(pessoa.getNome()));
 		
 		System.out.println(" ");
