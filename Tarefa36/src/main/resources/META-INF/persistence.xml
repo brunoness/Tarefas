@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+
+    <persistence-unit name="tarefa35PU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- List all your entity classes here -->
+        <class>domain.Cliente</class>
+        <class>domain.Produto</class>
+        <class>domain.Venda</class>
+        <class>domain.ProdutoQuantidade</class>
+
+        <properties>
+            <!-- Database connection settings - Placeholders to be replaced by .env -->
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <!-- IMPORTANT: These values will be loaded from .env file in the code -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/mod35"/> <!-- Placeholder URL -->
+            <property name="javax.persistence.jdbc.user" value="postgres"/> <!-- Placeholder User -->
+            <property name="javax.persistence.jdbc.password" value="Alfa96"/> <!-- Placeholder Password -->
+            <!-- Hibernate properties -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- Use 'create' for initial schema generation, 'update' afterwards -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+
+    </persistence-unit>
+    
+    <persistence-unit name="tarefa36PU" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!-- List all your entity classes here -->
+		<class>domain.Cliente</class>
+		<class>domain.Produto</class>
+		<class>domain.Venda</class>
+		<class>domain.ProdutoQuantidade</class>
+		<properties>
+			<!-- Database connection settings - mod36 -->
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/mod36"/>
+			<property name="javax.persistence.jdbc.user" value="postgres"/>
+			<property name="javax.persistence.jdbc.password" value="Alfa96"/>
+			<!-- Hibernate properties -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+		</properties>
+	</persistence-unit>
+
+</persistence>
+
