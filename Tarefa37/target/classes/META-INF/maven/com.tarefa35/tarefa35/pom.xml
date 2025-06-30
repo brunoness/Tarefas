@@ -4,35 +4,45 @@
   <artifactId>tarefa35</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <properties>
+  	<jpa>2.2</jpa>
+  	<hibernate>5.6.15.Final</hibernate>
+  	<junit>4.13.2</junit>
+  	<postgre>42.7.3</postgre>
+  </properties>
+  
+  
+  <dependencyManagements>
   <dependencies>
         <!-- JPA API -->
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
-            <version>2.2</version> <!-- Or Jakarta Persistence API if preferred -->
+            <version>${jpa}</version>
         </dependency>
 
         <!-- Hibernate Core -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.6.15.Final</version> <!-- Use a recent stable version -->
+            <version>${hibernate}</version>
         </dependency>
 
         <!-- PostgreSQL Driver -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.7.3</version> <!-- Use a recent stable version -->
+            <version>${postgre}</version>
         </dependency>
 
         <!-- JUnit 4 -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <version>${junit}</version>
             <scope>test</scope>
         </dependency>
 
     </dependencies>
+    </dependencyManagements>
 </project>

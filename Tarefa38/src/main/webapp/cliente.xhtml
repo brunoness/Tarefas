@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>Cadastro de Clientes</title>
+</h:head>
+<h:body>
+	<h2>Cadastro de Cliente</h2>
+
+	<h:form>
+		<h:panelGrid columns="2" cellpadding="5">
+
+			<h:outputLabel for="nome" value="Nome:" />
+			<h:inputText id="nome" value="#{clienteController.cliente.nome}"
+				required="true" />
+
+			<h:outputLabel for="cpf" value="CPF:" />
+			<h:inputText id="cpf" value="#{clienteController.cliente.cpf}"
+				required="true" />
+
+			<h:outputLabel for="telefone" value="Telefone:" />
+			<h:inputText id="telefone"
+				value="#{clienteController.cliente.telefone}" />
+
+			<h:outputLabel for="endereco" value="Endereço:" />
+			<h:inputText id="endereco"
+				value="#{clienteController.cliente.endereco}" />
+
+		</h:panelGrid>
+
+		<h:commandButton value="Salvar" action="#{clienteController.salvar}" />
+	</h:form>
+
+	<h:separator />
+
+	<h2>Lista de Clientes</h2>
+	<h:dataTable value="#{clienteController.clientes}" var="c" border="1">
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+            #{c.nome}
+        </h:column>
+		<h:column>
+			<f:facet name="header">CPF</f:facet>
+            #{c.cpf}
+        </h:column>
+		<h:column>
+			<f:facet name="header">Telefone</f:facet>
+            #{c.telefone}
+        </h:column>
+		<h:column>
+			<f:facet name="header">Endereço</f:facet>
+            #{c.endereco}
+        </h:column>
+	</h:dataTable>
+</h:body>
+</html>
