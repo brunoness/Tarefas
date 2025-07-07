@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Pilha</title>
+</head>
+
+<body>
+    <h1>Pilha - Estrutura de Dados</h1>
+
+    <input type="text" id="valor" placeholder="Digite um valor">
+    <button onclick="empilhar()">Empilhar</button>
+    <button onclick="desempilhar()">Desempilhar</button>
+
+    <h3>Topo da Pilha: <span id="topo"></span></h3>
+    <h3>Tamanho: <span id="tamanho"></span></h3>
+    <h3>Pilha Atual: <span id="pilhaCompleta"></span></h3>
+    <h3>Está vazia? <span id="vazia"></span></h3>
+
+
+    <script>
+        const API = "/pilha";
+
+        function empilhar() {
+            const valor = document.getElementById("valor").value;
+            fetch(API + "/empilhar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ valor })
+            }).then(() => atualizar());
+        }
+
+        function desempilhar() {
+            fetch(API + "/desempilhar", { method: "DELETE" })
+                .then(() => atualizar());
+        }
+
+        function atualizarPilhaCompleta() {
+            fetch(API + "/todos")
+                .then(res => res.json())
+                .then(lista => {
+                    const valores = lista.map(e => e.valor).reverse(); // Mostra do topo até o fundo
+                    document.getElementById("pilhaCompleta").textContent = valores.join(" - ");
+                });
+        }
+
+        function atualizar() {
+            fetch(API + "/topo").then(res => res.json()).then(data => {
+                document.getElementById("topo").textContent = data?.valor || "Nenhum";
+            });
+
+            fetch(API + "/tamanho").then(res => res.text()).then(data => {
+                document.getElementById("tamanho").textContent = data;
+            });
+
+            fetch(API + "/vazia").then(res => res.text()).then(data => {
+                document.getElementById("vazia").textContent = data === "true" ? "Sim" : "Não";
+            });
+        }
+
+        atualizarPilhaCompleta(); // atualiza ao carregar a página
+    </script>
+</body>
+
+</html>
