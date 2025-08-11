@@ -12,7 +12,7 @@ print('12ª posição do array = 13ª da sequencia de Fibonacci =', fibo(12));
 
 print('30ª posição do array = 31ª da sequencia de Fibonacci =', fibo(30));
 
-# Desomente a linha a baixo para ver o erro "Maximum Recursion Depth Exceeded"
+# Descomente a linha a baixo para ver o erro "Maximum Recursion Depth Exceeded"
 #print('1000ª posição do array = 1001ª da sequencia de Fibonacci =', fibo(1000));
 
 print(' ');
