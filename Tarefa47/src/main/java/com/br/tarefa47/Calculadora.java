@@ -21,6 +21,13 @@ public class Calculadora {
         return (int) a / b;
     }
 
+    private int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
     public int somarPublic(int a, int b) {
         return somar(a, b);
     }
@@ -35,9 +42,16 @@ public class Calculadora {
 
     public int dividirPublic(int a, int b) {
         if (b == 0) {
-           System.out.println("Divisão por zero não é permitida.");
+            System.out.println("Divisão por zero não é permitida.");
         }
         return dividir(a, b);
+    }
+
+    public int fibonacciPublic(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
 }
