@@ -43,6 +43,9 @@ public class Animal {
 	@Column(nullable = false)
 	private String porte;
 	
+	@Column(nullable = false)
+	private String tipo;
+	
 	//Getters and Setters
 	
 	public String getNomeProvisorio() {
@@ -116,5 +119,15 @@ public class Animal {
 	public void setPorte(String porte) {
 		this.porte = porte;
 	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
+	
 	
 }

@@ -16,5 +16,11 @@ public interface AnimalRepository extends JpaRepository<Animal, Integer> {
 	
 	@Query("SELECT a FROM Animal a WHERE a.obito IS NOT NULL ORDER BY a.dataEntrada")
 	List<Animal> findObito();
+	
+	@Query("SELECT a FROM Animal a WHERE a.tipo = 'DOG'")
+	List<Animal> findDog();
+	
+	@Query("SELECT a FROM Animal a WHERE a.tipo = 'CAT'")
+			List<Animal> findCat();
 
 }

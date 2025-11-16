@@ -36,12 +36,21 @@ public class AnimalControle {
 	@GetMapping("obito")
 	private List<Animal> findObito(){
 		return repository.findObito();
-		
 	}
 	
 	@GetMapping("adotado")
 	private List<Animal> findAdopted(){
 		return repository.findAdopted();
+	}
+	
+	@GetMapping("dog")
+	private List<Animal> findDog(){
+		return repository.findDog();
+	}
+	
+	@GetMapping("cat")
+	private List<Animal> findCat(){
+		return repository.findCat();
 	}
 
 }
